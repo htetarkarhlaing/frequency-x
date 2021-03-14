@@ -1,0 +1,48 @@
+.wrapper {
+  height: 100vh;
+  background-image: url("../../public/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  padding-left: 100px;
+}
+
+.name {
+  font-size: 80px;
+  font-weight: 700;
+  -webkit-text-stroke: 2px #cb6e00;
+  color: transparent;
+  font-family: 'Poppins', sans-serif;
+}
+
+.subtitle {
+  font-size: 40px;
+  color: #0b46b7;
+  font-weight: 500;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.cursour {
+  font-size: 50px;
+  color: #0b46b7;
+}
+
+.styledTypingText {
+  color: #0b46b7;
+}
+
+.typingText {
+  font-size: 50px;
+  font-weight: 500;
+  font-family: 'Ubuntu', sans-serif;
+  color: #656565;
+}
