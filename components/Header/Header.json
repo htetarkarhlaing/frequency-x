@@ -1,0 +1,24 @@
+{
+    "links": [
+        {
+            "name": "Home",
+            "path": "/"
+        },
+        {
+            "name": "Services",
+            "path": "/services"
+        },
+        {
+            "name": "Partners",
+            "path": "/partners"
+        },
+        {
+            "name": "About Me",
+            "path": "/about-me"
+        },
+        {
+            "name": "Contact Me",
+            "path": "/contact-me"
+        }
+    ]
+}
