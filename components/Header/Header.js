@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Header.module.css";
-import Link from "next/link";
+import OnDesktop from "./OnDesktop";
+import OnMobile from "./OnMobile";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    window.onresize = () => {
+      if (window.innerWidth < 1024) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     window.onscroll = function () {
@@ -15,32 +26,11 @@ const Header = () => {
     };
   }, []);
 
-  return (
-    <nav className={scrolled ? styles.headerColor : styles.headerTransparent}>
-      <Link href="/">
-        <div className={styles.logo}>DELTA TECH</div>
-      </Link>
-      <div className={styles.space}>
-      </div>
-      <ul className={styles.linkWrapper}>
-        <Link href="/">
-          <li className={styles.linkItem}>Home</li>
-        </Link>
-        <Link href="/">
-          <li className={styles.linkItem}>Services</li>
-        </Link>
-        <Link href="/">
-          <li className={styles.linkItem}>Partners</li>
-        </Link>
-        <Link href="/">
-          <li className={styles.linkItem}>About</li>
-        </Link>
-        <Link href="/">
-          <li className={styles.linkItem}>Contact Me</li>
-        </Link>
-      </ul>
-    </nav>
-  );
+  if (isMobile) {
+    return <OnMobile />;
+  } else {
+    return <OnDesktop />;
+  }
 };
 
 export default Header;
