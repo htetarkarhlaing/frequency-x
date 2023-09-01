@@ -28,7 +28,7 @@ export default function Nav() {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <NavbarBrand>
+                <NavbarBrand as={NavbarItem}>
                     <Logo />
                 </NavbarBrand>
             </NavbarContent>
@@ -44,8 +44,8 @@ export default function Nav() {
                         Tools
                     </Link>
                 </NavbarItem>
-                <NavbarItem isActive>
-                    <Link href="#" aria-current="page">
+                <NavbarItem>
+                    <Link color="foreground" href="#">
                         Skills
                     </Link>
                 </NavbarItem>
