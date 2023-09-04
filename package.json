@@ -18,6 +18,7 @@
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.2",
     "next": "13.4.19",
+    "nodemailer": "^6.9.4",
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,5 +26,9 @@
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2",
     "wavesurfer.js": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.9",
+    "prisma": "^5.2.0"
   }
 }
