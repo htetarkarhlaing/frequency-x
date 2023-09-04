@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/nodemailer": "^6.4.9",
-    "prisma": "^5.2.0"
+    "prisma": "^5.2.0",
+    "prisma-dbml-generator": "^0.10.0"
   }
 }
