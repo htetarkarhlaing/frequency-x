@@ -46,9 +46,6 @@ export default function Page() {
         />
 
       </div>
-      <div className="w-screen h-screen">
-
-      </div>
     </>
   );
 }
