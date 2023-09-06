@@ -3,6 +3,9 @@ import { WaveSurferOptions } from "wavesurfer.js";
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Orbitron } from "next/font/google";
+import { Link } from "@nextui-org/react";
+import { useRouter } from 'next/navigation'
+import { FaSoundcloud } from "react-icons/fa"
 import useWavesurfer from "./waveHook";
 
 const orbitron = Orbitron({
@@ -10,7 +13,12 @@ const orbitron = Orbitron({
     variable: "--font-inter",
 });
 
-const Wave = (props: WaveSurferOptions) => {
+interface IWave extends WaveSurferOptions {
+    link: string
+}
+
+const Wave = (props: IWave) => {
+    const router = useRouter()
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const wavesurfer = useWavesurfer(containerRef, props);
@@ -52,8 +60,16 @@ const Wave = (props: WaveSurferOptions) => {
                     ref={containerRef}
                     className="m-h-[50px] w-full absolute bottom-10 px-5"
                 />
-                <div className={`${orbitron.className} absolute bottom-[100px] px-5`}>
-                    music: {props.url?.replace("/", "")}
+                <div className={`${orbitron.className} absolute bottom-[100px] px-5 cursor-pointer`}>
+                    <Link
+                        isExternal
+                        showAnchorIcon
+                        color="foreground"
+                        href={props.link}
+                        anchorIcon={<FaSoundcloud size="2em" className="pl-2" />}
+                    >
+                        music: {props.url?.replace("/", "")}
+                    </Link>
                 </div>
             </div>
         </div>

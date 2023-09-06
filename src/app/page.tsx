@@ -5,7 +5,10 @@ import Wave from "@src/components/wave";
 
 export default function Page() {
 
-  const [audioUrl, setAudioUrl] = useState("/brain-damage-paparazi.mp3")
+  const [audioUrl, setAudioUrl] = useState({
+    url: "/brain-damage-paparazi.mp3",
+    link: "https://soundcloud.com/paparazioffical/brain-damage?si=484d75e7626e4261b0e78cb695112111&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+  })
 
   return (
     <>
@@ -42,7 +45,8 @@ export default function Page() {
           barWidth={1}
           barGap={2}
           barRadius={2}
-          url={audioUrl}
+          url={audioUrl.url}
+          link={audioUrl.link}
         />
 
       </div>
